@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Mueeza Portfolio{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Left Column: Text Content -->
+            <div class="hero-text">
+                <h1>MUEEZA</h1>
+                <div class="typed-container">
+                    I'm a <span class="typed-text"></span>
+                </div>
+                <p class="hero-description">
+                    I am a dedicated Website Developer and AI Enthusiast passionate about creating modern websites 
+                    and intelligent solutions using Artificial Intelligence, Machine Learning, and Deep Learning.
+                </p>
+                <div class="btn-group">
+                    <a href="/projects" class="btn btn-primary">View Projects</a>
+                    <a href="/contact" class="btn btn-outline">Contact Me</a>
+                    <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn btn-outline" download>Download Resume</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Image -->
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <img src="/static/images/WhatsApp Image 2026-05-20 at 4.13.10 PM.jpeg" alt="Mueeza Profile">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
