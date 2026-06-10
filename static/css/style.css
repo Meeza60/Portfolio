@@ -35,8 +35,10 @@
 
 * {
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     box-sizing: border-box;
+        /* padding-left: 20px; */
+
 }
 
 html {
@@ -70,6 +72,7 @@ section {
 h1, h2, h3 {
     font-weight: 700;
     line-height: 1.2;
+        margin-bottom: 20px;
 }
 
 h2 {
@@ -184,8 +187,8 @@ h2 {
 }
 
 .profile-img {
-    width: 180px;
-    height: 180px;
+    width: 100px;
+    height: 120px;
     border-radius: 80%;
     margin: 0 auto 1.5rem;
     background: var(--primary-gradient);
@@ -228,12 +231,18 @@ h2 {
 }
 
 /* 5. Buttons */
+/* Button Group - Side by Side */
 .btn-group {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;  /* Prevents wrapping to next line */
     margin-top: 2rem;
+}
+
+.btn-group .btn {
+    flex: 0 0 auto;  /* Prevents buttons from stretching */
+    white-space: nowrap;  /* Prevents text from wrapping */
 }
 
 .btn {
@@ -248,6 +257,9 @@ h2 {
     cursor: pointer;
     border: none;
     font-size: 1rem;
+        /* margin-left: 50px; */
+        width: 170px;
+        margin-top: 70px;
 }
 
 .btn-primary {
@@ -265,29 +277,34 @@ h2 {
     background: transparent;
     border: 2px solid var(--glass-border);
     color: var(--text-primary);
+     border-color: #1b6371;
+    transform: translateY(-3px);
+    background: rgba(43, 136, 180, 0.1);
 }
-
+/* 
 .btn-outline:hover {
     border-color: #1b6371;
     transform: translateY(-3px);
     background: rgba(43, 136, 180, 0.1);
-}
+} */
 
 /* 6. Glassmorphism Cards */
 .glass-card {
-    background: var(--card-bg);
+    background:white;
+    height: 450px;
     backdrop-filter: blur(12px);
     border-radius: 20px;
     border: 1px solid var(--glass-border);
     padding: 1.5rem;
     transition: all 0.3s ease;
+     
 }
-
-.glass-card:hover {
+/* 
+.education-experience:hover {
     transform: translateY(-5px);
-    border-color: rgba(139, 92, 246, 0.5);
+    border-color: rgba(45, 44, 46, 0.5);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* 7. About Page Styles */
 .about-grid {
@@ -327,6 +344,8 @@ h2 {
     margin: 2rem 0;
 }
 
+
+
 .skill-category {
     background: var(--glass-bg);
     backdrop-filter: blur(8px);
@@ -359,49 +378,82 @@ h2 {
 }
 
 /* 8. Projects Page */
+/* ========== PROJECTS SECTION – WHITE & TEAL THEME ========== */
+
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
 }
 
+    
+
 .project-card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.95);  /* White background */
     backdrop-filter: blur(12px);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(27, 99, 113, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
     border-color: #1b6371;
+    box-shadow: 0 15px 30px rgba(29, 80, 91, 0.2);
 }
 
+/* Project image area – teal gradient */
 .project-img {
     height: 200px;
-    background: linear-gradient(135deg, #1b3d4b, #1b3d4b);
+    background: linear-gradient(135deg, #1b6371, #0e3d47);  /* Teal gradient */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    color: #1b6371;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional: Add a subtle pattern overlay */
+.project-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path fill="white" d="M20,20 L30,20 L25,30 Z M50,50 L60,50 L55,60 Z M80,80 L90,80 L85,90 Z"/></svg>');
+    background-size: 30px;
+    opacity: 0.2;
+}
+
+.project-img i, 
+.project-img img {
+    position: relative;
+    z-index: 2;
 }
 
 .project-content {
     padding: 1.5rem;
+    background: white;
 }
 
 .project-title {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
+    color: #1b6371;  /* Teal title */
+    font-weight: 700;
 }
 
 .project-description {
-    color: var(--text-secondary);
+    color: #181717;  /* Dark gray for readability */
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
 .project-tech {
@@ -412,23 +464,57 @@ h2 {
 }
 
 .tech-tag {
-    background: rgba(190, 4, 4, 0.1);
-    padding: 0.2rem 0.8rem;
-    border-radius: 15px;
+    background: #e0f0f3;  /* Light teal tint */
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
     font-size: 0.75rem;
-    color: #b5dafd;
+    color: #1b6371;  /* Teal text */
+    font-weight: 500;
+    border: 1px solid rgba(27, 99, 113, 0.2);
 }
 
+/* Project buttons – teal theme */
 .project-links {
     display: flex;
     gap: 1rem;
 }
 
 .project-links .btn {
-    padding: 0.5rem 1.2rem;
+    padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
+.project-links .btn-primary {
+    background: #1b6371;
+    color: white;
+    border: none;
+}
+
+.project-links .btn-primary:hover {
+    background: #17869a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(27, 99, 113, 0.3);
+}
+
+.project-links .btn-outline {
+    background: transparent;
+    border: 2px solid #1b6371;
+    color: #1b6371;
+}
+
+.project-links .btn-outline:hover {
+    background: rgba(27, 99, 113, 0.1);
+    transform: translateY(-2px);
+    border-color: #0e4a55;
+    color: #0e4a55;
+}
 /* 9. Contact Page */
 .contact-wrapper {
     display: grid;
@@ -454,7 +540,7 @@ h2 {
 .info-item i {
     width: 45px;
     height: 45px;
-    background: rgba(139, 92, 246, 0.2);
+    background: #77b6c3;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -598,6 +684,7 @@ h2 {
     opacity: 1;
     transform: translateY(0);
 }
+
 
 /* Page transition fade */
 body {
@@ -791,9 +878,9 @@ body {
 }
 
 .image-wrapper {
-    width: 350px;          /* smaller size */
-    height: 350px;         /* same as width for perfect circle */
-    border-radius: 50%;    /* makes it round */
+    width: 300px;          /* smaller size */
+    height: 300px;         /* same as width for perfect circle */
+    border-radius: 80%;    /* makes it round */
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     border: 3px solid rgba(27, 99, 113, 0.5);
@@ -860,7 +947,7 @@ body {
 }
 
 .project-card {
-    background: rgba(20, 20, 30, 0.85);   /* dark grayish background */
+    background: rgba(255, 255, 255, 0.85);   /* dark grayish background */
     backdrop-filter: blur(12px);
     border-radius: 20px;
     overflow: hidden;
@@ -877,7 +964,7 @@ body {
 /* Project image area – solid dark gray, no gradient */
 .project-img {
     height: 200px;
-    background: #1a1a1a;          /* dark gray background */
+    /* background: #1a1a1a;      */  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -896,7 +983,7 @@ body {
 }
 
 .project-description {
-    color: #b0b0b0;               /* medium gray text */
+    color: #0e0e0e;               /* medium gray text */
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
@@ -949,10 +1036,353 @@ body {
 .project-links .btn-outline {
     background: transparent;
     border: 1px solid #555555;
-    color: #cccccc;
+    color: #787777;
 }
 
 .project-links .btn-outline:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: #aaaaaa;
+} 
+
+
+
+/* ========== FOOTER - UPDATED WITH VERTICAL LINKS ========== */
+
+.footer {
+    background: var(--darker-bg);
+    padding: 3rem 0 1.5rem;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer Columns */
+.footer-col h3,
+.footer-col h4 {
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+    color: #10515e;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.footer-description {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Vertical Quick Links */
+.footer-links-vertical,
+.footer-contact-vertical {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-vertical li,
+.footer-contact-vertical li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links-vertical a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links-vertical a:hover {
+    color: #1b6371;
+    padding-left: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Vertical Contact Info */
+.footer-contact-vertical li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.footer-contact-vertical li i {
+    width: 25px;
+    color: #0f4752;
+    font-size: 0.9rem;
+}
+
+.footer-contact-vertical a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-vertical a:hover {
+    color: #1b6371;
+}
+
+.footer-contact-vertical span {
+    color: var(--text-secondary);
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    background: linear-gradient(135deg, #1b6371, #0e3d47);
+    transform: translateY(-3px);
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-links-vertical li,
+    .footer-contact-vertical li {
+        justify-content: center;
+    }
+    
+    .footer-contact-vertical li {
+        justify-content: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-links-vertical a:hover {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .footer-col h4 {
+        margin-bottom: 0.8rem;
+    }
+}
+/* ========== FEATURED PROJECTS SECTION ========== */
+
+.featured-projects {
+    padding: 60px 0;
+    background: transparent;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0 2rem;
+}
+
+.featured-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+     transform: translateY(-10px);
+    border-color: #1B6371;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.featured-card:hover::before {
+    left: 100%;
+}
+
+/* .featured-card:hover {
+    transform: translateY(-10px);
+    border-color: #1B6371;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+} */
+
+.featured-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #1B6371);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.featured-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.featured-category {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: rgba(27, 99, 113);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.featured-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.featured-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.featured-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.featured-tech .tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: #1B6371;
+}
+
+.featured-links {
+    margin-top: 1rem;
+}
+
+.featured-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0d3e47;
+    text-decoration: none;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+}
+
+.featured-link:hover {
+    gap: 0.8rem;
+    color: #1B6371;
+}
+
+.featured-btn-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Responsive Featured Projects */
+@media (max-width: 992px) {
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .featured-card {
+        padding: 1.5rem;
+    }
+    
+    .featured-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .featured-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-projects {
+        padding: 40px 0;
+    }
+    
+    .featured-title {
+        font-size: 1.2rem;
+    }
 }
