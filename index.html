@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Mueeza - Professional Website Developer, Front-End Developer, and AI & Machine Learning Enthusiast. Explore portfolio, projects, and get in touch.">
+    <meta name="keywords" content="Mueeza, Website Developer, Front-End Developer, AI, ML, Portfolio, Flask, Python">
+    <meta name="author" content="Mueeza">
+    <meta name="robots" content="index, follow">
+    <title>Home | Mueeza Portfolio</title>
+<link rel="icon" href="./static/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">MUEEZA</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+       <section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Left Column: Text Content -->
+            <div class="hero-text">
+                <h1>MUEEZA</h1>
+                <div class="typed-container">
+                    I'm a <span class="typed-text"></span>
+                </div>
+                <p class="hero-description">
+                    I am a dedicated Website Developer and AI Enthusiast passionate about creating modern websites 
+                    and intelligent solutions using Artificial Intelligence, Machine Learning, and Deep Learning.
+                </p>
+                <div class="btn-group">
+                    <a href="projects.html" class="btn btn-primary">View Projects</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Me</a>
+                    <!-- <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn btn-outline" download>Download Resume</a> -->
+                </div>
+            </div>
+
+            <!-- Right Column: Image -->
+            <div class="hero-image">
+                <div class="image-wrapper">
+         <img src="./static/images/WhatsApp Image 2026-05-20 at 4.13.10 PM.jpeg" alt="Mueeza Profile">    
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="featured-projects">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Hand-picked projects showcasing my best work</p>
+        </div>
+        
+        <div class="featured-grid">
+            <!-- Project 1: Website Development -->
+            <div class="featured-card">
+                <div class="featured-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="featured-category">Website Development</div>
+                <h3 class="featured-title">E-Commerce Store</h3>
+                <p class="featured-description">Complete e-commerce solution with product management, cart, and payment integration built on WordPress.</p>
+                <div class="featured-tech">
+                    <span class="tech-tag">WordPress</span>
+                    <span class="tech-tag">WooCommerce</span>
+                    <span class="tech-tag">PHP</span>
+                </div>
+                <div class="featured-links">
+                    <a href="#" class="featured-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 2: AI / Machine Learning -->
+            <div class="featured-card">
+                <div class="featured-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="featured-category">AI & Machine Learning</div>
+                <h3 class="featured-title">Brain Tumor Detection</h3>
+                <p class="featured-description">Deep learning model using CNN to detect brain tumors from MRI scans with high accuracy.</p>
+                <div class="featured-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">CNN</span>
+                </div>
+                <div class="featured-links">
+                    <a href="#" class="featured-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 3: Frontend Development -->
+            <div class="featured-card">
+                <div class="featured-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="featured-category">Frontend Development</div>
+                <h3 class="featured-title">Leeva Website Frontend</h3>
+                <p class="featured-description">Pixel-perfect frontend development with animations and responsive design for modern brand.</p>
+                <div class="featured-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="featured-links">
+                    <a href="#" class="featured-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="featured-btn-wrapper">
+            <a href="/projects" class="btn btn-outline" style="    width: 220px;
+">View All Projects <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid" style="background: rgb(22 72 82 / 56%);
+    padding: 20px;">
+                <!-- Column 1: Brand Info -->
+                <div class="footer-col">
+                    <h3 class="footer-logo">MUEEZA</h3>
+                    <p class="footer-tagline">Website Developer & AI Enthusiast</p>
+                    <p class="footer-description">Creating modern websites and intelligent solutions using AI, ML, and Deep Learning.</p>
+                </div>
+
+                <!-- Column 2: Quick Links (Vertical) -->
+                <div class="footer-col" style="    padding-left: 50px;
+">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links-vertical">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info (Vertical) -->
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact-vertical">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:meezarajpoot@gmail.com">meezarajpoot@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+9230080044117">03080044117</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sharaqpur Road, Shahdara, Lahore</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social Links -->
+                <div class="footer-col">
+                    <h4>Follow Me</h4>
+                    <div class="footer-social">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 MUEEZA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="./static/js/script.js"></script>
+</body>
+</html>

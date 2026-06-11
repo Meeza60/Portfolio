@@ -1,9 +1,40 @@
-<!-- templates/about.html -->
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Mueeza - Professional Website Developer, Front-End Developer, and AI & Machine Learning Enthusiast. Explore portfolio, projects, and get in touch.">
+    <meta name="keywords" content="Mueeza, Website Developer, Front-End Developer, AI, ML, Portfolio, Flask, Python">
+    <meta name="author" content="Mueeza">
+    <meta name="robots" content="index, follow">
+    <title>About | Mueeza Portfolio</title>
+<link rel="icon" href="./static/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">MUEEZA</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-{% block title %}About | Mueeza{% endblock %}
-
-{% block content %}
+    <!-- Main Content -->
+    <main>
 <section class="about">
     <div class="container">
         <div class="section-header">
@@ -93,5 +124,69 @@
             </div>
         </div>
     </div>
-</section>
-{% endblock %}
+</section>    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid" style="background: rgb(22 72 82 / 56%);
+    padding: 20px;">
+                <!-- Column 1: Brand Info -->
+                <div class="footer-col">
+                    <h3 class="footer-logo">MUEEZA</h3>
+                    <p class="footer-tagline">Website Developer & AI Enthusiast</p>
+                    <p class="footer-description">Creating modern websites and intelligent solutions using AI, ML, and Deep Learning.</p>
+                </div>
+
+                <!-- Column 2: Quick Links (Vertical) -->
+                <div class="footer-col" style="    padding-left: 50px;
+">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links-vertical">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info (Vertical) -->
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact-vertical">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:meezarajpoot@gmail.com">meezarajpoot@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+9230080044117">03080044117</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sharaqpur Road, Shahdara, Lahore</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social Links -->
+                <div class="footer-col">
+                    <h4>Follow Me</h4>
+                    <div class="footer-social">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 MUEEZA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
